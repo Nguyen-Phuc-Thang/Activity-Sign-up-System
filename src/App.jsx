@@ -5,9 +5,11 @@ import Calendar from './components/Calendar.jsx';
 // Screens imports
 import Login from './pages/Login.jsx';
 import AdminActivity from './pages/AdminActivity.jsx';
+import AddActivity from './pages/AddActivity.jsx';
 import Profile from './pages/Profile.jsx';
 import Caregiver from './pages/Caregiver.jsx';
 import CareRecipient from './pages/CareRecipient.jsx';
+import ModifyActivity from './pages/ModifyActivity.jsx';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/caregiver" element={<Caregiver />} />
           <Route path="/" element={<Login />} />
           <Route path="/admin/activity" element={<AdminActivity />} />
+          <Route path="/admin/activity/add" element={<AddActivity />} />
+          <Route path="/admin/activity/modify/:activityId" element={<ModifyActivity />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </main>
