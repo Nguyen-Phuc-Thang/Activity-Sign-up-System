@@ -6,6 +6,7 @@ import multiMonthPlugin from "@fullcalendar/multimonth";
 import interactionPlugin from "@fullcalendar/interaction";
 import EventForm from "./EventForm";
 import "./Calendar.css";
+import CaregiverNavBar from "./CaregiverNavBar";
 
 function Calendar() {
     const [events, setEvents] = useState([
@@ -41,6 +42,7 @@ function Calendar() {
 
     return (
         <>
+            <CaregiverNavBar />
             <button onClick={() => setShowEventForm(true)}>+ Add Event</button>
 
             {showEventForm && (
