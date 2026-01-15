@@ -14,7 +14,7 @@ export default function Login() {
             alert('Login error: ' + error.message);
 
         } else {
-            navigate('/activity');
+            navigate('/admin/activity');
         }
     }
 

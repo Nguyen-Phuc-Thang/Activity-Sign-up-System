@@ -1,0 +1,117 @@
+.activity-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, height 0.3s ease;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.activity-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.card-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #444040;
+    flex: 1;
+}
+
+.card-type {
+    background-color: #f76177;
+    color: #ffffff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.card-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.detail-label {
+    font-size: 0.85rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.detail-value {
+    font-size: 1rem;
+    color: #444040;
+    font-weight: 600;
+}
+
+.toggle-description-btn {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    color: #f76177;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.toggle-description-btn:hover {
+    color: #d45066;
+}
+
+.card-description {
+    background-color: #f0f0f5;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+    border-left: 3px solid #f76177;
+    animation: slideDown 0.3s ease;
+}
+
+.card-description p {
+    margin: 0;
+    color: #444040;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

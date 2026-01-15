@@ -1,0 +1,257 @@
+.profile-page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: calc(100vh - 60px);
+    padding: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.profile-container {
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Avatar Section */
+.avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.avatar-frame {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #f76177;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.user-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* User Info Section */
+.user-info-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.user-info-section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #444040;
+    margin: 0 0 1rem 0;
+}
+
+/* Info Item */
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info-item label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-field {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: #ffffff;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    transition: border-color 0.2s ease;
+}
+
+.info-value {
+    font-size: 1.1rem;
+    color: #444040;
+    font-weight: 500;
+    flex: 1;
+}
+
+/* Edit Button */
+.edit-btn {
+    background: none;
+    border: none;
+    color: #f76177;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.edit-btn:hover {
+    background-color: rgba(247, 97, 119, 0.1);
+    color: #d45066;
+}
+
+/* Edit Input Group */
+.edit-input-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.edit-input-group input {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid #f76177;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #444040;
+    font-weight: 500;
+    transition: border-color 0.2s ease;
+}
+
+.edit-input-group select {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border: 2px solid #f76177;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #444040;
+    font-weight: 500;
+    transition: border-color 0.2s ease;
+    background-color: white;
+    cursor: pointer;
+}
+
+.edit-input-group input:focus {
+    outline: none;
+    border-color: #d45066;
+    box-shadow: 0 0 0 3px rgba(247, 97, 119, 0.1);
+}
+
+.edit-input-group select:focus {
+    outline: none;
+    border-color: #d45066;
+    box-shadow: 0 0 0 3px rgba(247, 97, 119, 0.1);
+}
+
+.save-btn,
+.cancel-btn {
+    background-color: #f76177;
+    color: white;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.save-btn:hover {
+    background-color: #d45066;
+}
+
+.cancel-btn {
+    background-color: #999;
+}
+
+.cancel-btn:hover {
+    background-color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .avatar-frame {
+        width: 150px;
+        height: 150px;
+        border-width: 3px;
+    }
+
+    .user-info-section h1 {
+        font-size: 2rem;
+    }
+
+    .info-field {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .edit-btn {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-content {
+        padding: 1rem;
+    }
+
+    .avatar-frame {
+        width: 120px;
+        height: 120px;
+        border-width: 3px;
+    }
+
+    .user-info-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .info-item label {
+        font-size: 0.85rem;
+    }
+
+    .info-value {
+        font-size: 1rem;
+    }
+
+    .edit-input-group {
+        flex-direction: column;
+    }
+
+    .edit-input-group input {
+        width: 100%;
+    }
+}
