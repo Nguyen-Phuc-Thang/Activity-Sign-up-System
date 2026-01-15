@@ -2,6 +2,7 @@ import { useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
+import multiMonthPlugin from "@fullcalendar/multimonth";
 import interactionPlugin from "@fullcalendar/interaction";
 import EventForm from "./EventForm";
 import "./Calendar.css";
@@ -14,40 +15,53 @@ function Calendar() {
 
     const [showEventForm, setShowEventForm] = useState(false);
 
-    const addEvent = () => {
-        alert("Add Event button clicked!");
-        setShowEventForm(true);
-    };
+    const addEvent = (e) => {
+        alert("Adding event");
+        e.preventDefault();
 
-    const closeEventForm = () => {
+        const form = e.currentTarget;
+
+        console.log(form);
+
+        const title = form.title.value;
+        const date = form.date.value;
+        const timeStart = form.timeStart.value;
+        const timeEnd = form.timeEnd.value;
+
+        const newEvent = {
+            id: crypto.randomUUID(),
+            title,
+            start: `${date}T${timeStart}`,
+            end: `${date}T${timeEnd}`,
+        };
+
+        setEvents((prev) => [...prev, newEvent]);
         setShowEventForm(false);
-    }
+    };
 
     return (
         <>
-            <button onClick={addEvent}>+ Add Event</button>
+            <button onClick={() => setShowEventForm(true)}>+ Add Event</button>
+
             {showEventForm && (
                 <div className="overlay" onClick={() => setShowEventForm(false)}>
-                    <div
-                        className="content"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <EventForm onClose={() => setShowEventForm(false)} />
+                    <div className="content" onClick={(e) => e.stopPropagation()}>
+                        <EventForm onClose={() => setShowEventForm(false)} onSubmit={addEvent} />
                     </div>
                 </div>
             )}
+
             <FullCalendar
-                plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+                plugins={[dayGridPlugin, timeGridPlugin, multiMonthPlugin, interactionPlugin]}
                 initialView="timeGridWeek"
                 headerToolbar={{
                     left: "prev,next today",
                     center: "title",
-                    right: "dayGridMonth,timeGridWeek"
+                    right: "dayGridMonth,timeGridWeek,multiMonthYear",
                 }}
-                selectable
+                selectable={true}
                 events={events}
-            >
-            </FullCalendar>
+            />
         </>
     );
 }
