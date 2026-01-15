@@ -27,7 +27,7 @@ export default function ActivityCard({ title, description, location, time, type,
                     </div>
                     <div className='detail-item'>
                         <span className='detail-label'>Capacity:</span>
-                        <span className='detail-value'>{remaining}/{capacity}</span>
+                        <span className='detail-value'>{capacity - remaining}/{capacity}</span>
                     </div>
                 </div>
             </div>
