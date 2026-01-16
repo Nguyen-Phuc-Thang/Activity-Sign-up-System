@@ -7,7 +7,7 @@ import AdminActivity from './pages/AdminActivity.jsx';
 import AddActivity from './pages/AddActivity.jsx';
 import Profile from './pages/Profile.jsx';
 import ModifyActivity from './pages/ModifyActivity.jsx';
-
+import AddAccount from './pages/AddAccount.jsx';
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +18,7 @@ function App() {
           <Route path="/admin/activity/add" element={<AddActivity />} />
           <Route path="/admin/activity/modify/:activityId" element={<ModifyActivity />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/admin/account/add" element={<AddAccount />} />
         </Routes>
       </main>
     </BrowserRouter>

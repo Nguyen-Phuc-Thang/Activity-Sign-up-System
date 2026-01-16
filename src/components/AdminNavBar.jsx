@@ -11,7 +11,7 @@ export default function AdminNavBar() {
                 <User size={24} />
             </button>
             <button className="navbar-btn" onClick={() => navigate('/admin/activity')}>Activity</button>
-            <button className="navbar-btn">Accounts</button>
+            <button className="navbar-btn" onClick={() => navigate('/admin/account/add')}>Accounts</button>
         </nav>
     );
 }
