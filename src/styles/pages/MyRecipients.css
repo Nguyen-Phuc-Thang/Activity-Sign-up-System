@@ -1,0 +1,145 @@
+/* Page layout */
+.myrecipients-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.myrecipients-content {
+    flex: 1;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+/* Header */
+.myrecipients-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.myrecipients-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.myrecipients-add-btn {
+    background-color: #37b5eb;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.myrecipients-add-btn:hover {
+    background-color: #91c8f5;
+}
+
+.myrecipients-add-btn:active {
+    transform: scale(0.98);
+}
+
+.myrecipients-error {
+    color: #dc2626;
+    background-color: #fee2e2;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.myrecipients-empty {
+    text-align: center;
+    margin-top: 80px;
+    color: #6b7280;
+}
+
+.myrecipients-empty p {
+    margin: 6px 0;
+}
+
+.myrecipients-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+
+.myrecipients-row {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.myrecipients-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.myrecipients-email {
+    font-size: 15px;
+    font-weight: 500;
+    color: #111827;
+    word-break: break-all;
+}
+
+@media (max-width: 640px) {
+    .myrecipients-content {
+        padding: 20px;
+    }
+
+    .myrecipients-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .myrecipients-add-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.myrecipients-add-inline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.myrecipients-add-inline input {
+    width: 220px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
+}
+
+.add-save-btn {
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.add-save-btn:disabled {
+    background-color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.add-cancel-btn {
+    background-color: #eb5050;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+}

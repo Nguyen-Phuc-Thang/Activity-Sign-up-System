@@ -10,12 +10,14 @@ import Profile from './pages/Profile.jsx';
 import Caregiver from './pages/Caregiver.jsx';
 import CareRecipient from './pages/CareRecipient.jsx';
 import ModifyActivity from './pages/ModifyActivity.jsx';
+import MyRecipients from './components/MyRecipient.jsx';
 
 function App() {
   return (
     <BrowserRouter>
       <main className='main-content'>
         <Routes>
+          <Route path="/caregiver/my-recipients" element={<MyRecipients />} />
           <Route path="/care-recipient" element={<CareRecipient />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/caregiver" element={<Caregiver />} />

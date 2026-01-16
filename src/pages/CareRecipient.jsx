@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import '../styles/pages/CareRecipient.css';
-import CaregiverNavBar from '../components/CaregiverNavBar';
+import CareRecipientNavBar from '../components/CareRecipientNavBar';
 import CareRecipientActivityCard from '../components/CareRecipientActivityCard';
 import { Colors } from '../global/styles';
 import { useNavigate } from 'react-router-dom';
@@ -30,7 +30,7 @@ export default function CareRecipientActivity() {
     if (loading || !activities) {
         return (
             <div className="activity-page">
-                <CaregiverNavBar />
+                <CareRecipientNavBar />
                 <main className="activity-page-content" style={{ backgroundColor: Colors.BACKGROUND, color: Colors.TEXT }}>
                     <h1>Activity</h1>
                     <p>Loading...</p>
@@ -41,7 +41,7 @@ export default function CareRecipientActivity() {
 
     return (
         <div className="activity-page">
-            <CaregiverNavBar />
+            <CareRecipientNavBar />
             <main className="activity-page-content" style={{ backgroundColor: Colors.BACKGROUND, color: Colors.TEXT }}>
                 <h1>Activity</h1>
 

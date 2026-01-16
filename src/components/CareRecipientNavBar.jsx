@@ -10,9 +10,7 @@ export default function CaregiverNavBar() {
             <button className="navbar-btn icon-btn" onClick={() => navigate('/profile')}>
                 <User size={24} />
             </button>
-            <button className="navbar-btn" onClick={() => navigate('/caregiver')}>Activity</button>
-            <button className="navbar-btn" onClick={() => navigate('/caregiver/calendar')}>Calendar</button>
-            <button className="navbar-btn" onClick={() => navigate('/caregiver/my-recipients')}>My Recipients</button>
+            <button className="navbar-btn" onClick={() => navigate('/care-recipient')}>Activity</button>
         </nav>
     );
 }
