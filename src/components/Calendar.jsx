@@ -4,7 +4,6 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import multiMonthPlugin from "@fullcalendar/multimonth";
 import interactionPlugin from "@fullcalendar/interaction";
-import EventForm from "./EventForm";
 import "./Calendar.css";
 import CaregiverNavBar from "./CaregiverNavBar";
 
@@ -13,8 +12,6 @@ function Calendar() {
         { id: "a", title: "Activity A", start: "2026-01-14T10:00:00" },
         { id: "b", title: "Activity B", start: "2026-01-15T14:00:00" },
     ]);
-
-    const [showEventForm, setShowEventForm] = useState(false);
 
     const addEvent = (e) => {
         alert("Adding event");
@@ -43,15 +40,6 @@ function Calendar() {
     return (
         <>
             <CaregiverNavBar />
-            <button onClick={() => setShowEventForm(true)}>+ Add Event</button>
-
-            {showEventForm && (
-                <div className="overlay" onClick={() => setShowEventForm(false)}>
-                    <div className="content" onClick={(e) => e.stopPropagation()}>
-                        <EventForm onClose={() => setShowEventForm(false)} onSubmit={addEvent} />
-                    </div>
-                </div>
-            )}
 
             <FullCalendar
                 plugins={[dayGridPlugin, timeGridPlugin, multiMonthPlugin, interactionPlugin]}
