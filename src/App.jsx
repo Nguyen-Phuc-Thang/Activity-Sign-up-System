@@ -1,8 +1,8 @@
 import './App.css';
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import Calendar from './components/Calendar.jsx';
 
 // Screens imports
+import Calendar from './pages/Calendar.jsx';
 import Login from './pages/Login.jsx';
 import AdminActivity from './pages/AdminActivity.jsx';
 import AddActivity from './pages/AddActivity.jsx';
@@ -21,7 +21,7 @@ function App() {
           <Route path="/caregiver/requests" element={<CaregiverRequests />} />
           <Route path="/caregiver/my-recipients" element={<MyRecipients />} />
           <Route path="/care-recipient" element={<CareRecipient />} />
-          <Route path="/calendar" element={<Calendar />} />
+          <Route path="/caregiver/calendar" element={<Calendar />} />
           <Route path="/caregiver" element={<Caregiver />} />
           <Route path="/" element={<Login />} />
           <Route path="/admin/activity" element={<AdminActivity />} />

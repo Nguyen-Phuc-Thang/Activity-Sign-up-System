@@ -7,7 +7,7 @@ import { getUserMetadata, updateUserMetadata } from '../database/userMetadata.js
 import { AuthContext } from '../providers/AuthContext.js';
 
 
-export default function Profile() {
+export default function Profile({ navbar }) {
     const { user, loading } = useContext(AuthContext);
     const [userMetadata, setUserMetadata] = useState(null);
     const [editingField, setEditingField] = useState(null);
@@ -42,7 +42,7 @@ export default function Profile() {
 
     return (
         <div className="profile-page">
-            <AdminNavBar />
+            <div> {navbar} </div>
             <main className="profile-content" style={{ backgroundColor: Colors.BACKGROUND }}>
                 <div className="profile-container">
                     {/* Avatar Section */}

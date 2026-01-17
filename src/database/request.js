@@ -26,6 +26,18 @@ export async function getRequestsByRecipientEmails(recipientEmails) {
     return data;
 }
 
+
+export async function getRequestsByRecipientEmail(recipientEmail) {
+    const { data, error } = await supabase
+        .from('requests')
+        .select('activity_id, status')
+        .eq('recipient_email', recipientEmail);
+
+    if (error) throw error;
+    return data || [];
+}
+
+
 // accept or reject request
 export async function updateRequestStatus(requestId, status) {
     const { data, error } = await supabase

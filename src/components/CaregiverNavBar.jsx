@@ -11,8 +11,9 @@ export default function CaregiverNavBar() {
                 <User size={24} />
             </button>
             <button className="navbar-btn" onClick={() => navigate('/caregiver')}>Activity</button>
-            <button className="navbar-btn" onClick={() => navigate('/caregiver/calendar')}>Calendar</button>
             <button className="navbar-btn" onClick={() => navigate('/caregiver/my-recipients')}>My Recipients</button>
+            <button className="navbar-btn" onClick={() => navigate('/caregiver/requests')}>Requests</button>
+            <button className="navbar-btn" onClick={() => navigate('/caregiver/calendar')}>Calendar</button>
         </nav>
     );
 }

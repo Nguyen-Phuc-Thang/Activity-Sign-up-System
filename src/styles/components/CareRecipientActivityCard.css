@@ -92,9 +92,8 @@
     outline-offset: 3px;
 }
 
-/* ===== STATUS CARD BACKGROUNDS ===== */
 
-.cr-status-requested {
+.cr-status-pending {
     background-color: #fff7cc;
     border: 2px solid #f1c40f;
 }

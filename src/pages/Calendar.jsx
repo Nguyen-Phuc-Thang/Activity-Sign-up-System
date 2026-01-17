@@ -4,8 +4,8 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import multiMonthPlugin from "@fullcalendar/multimonth";
 import interactionPlugin from "@fullcalendar/interaction";
-import "./Calendar.css";
-import CaregiverNavBar from "./CaregiverNavBar";
+import "../styles/pages/Calendar.css";
+import CaregiverNavBar from "../components/CaregiverNavBar";
 
 function Calendar() {
     const [events, setEvents] = useState([

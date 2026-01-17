@@ -50,7 +50,7 @@ export default function CareRecipientActivityCard({
                     </span>
 
                     <span className="cr-detail-value">
-                        {status === 'requested' && 'REQUEST SENT'}
+                        {status === 'pending' && 'PENDING'}
                         {status === 'accepted' && 'ACCEPTED'}
                         {status === 'rejected' && 'REJECTED'}
                         {!status && `${capacity - remaining}/${capacity}`}
