@@ -59,7 +59,7 @@ export default function CareRecipientActivity() {
                             status={requestedIds.has(activity.id) ? 'requested' : null}
                             onClick={() => createRequest({
                                 activity_id: activity.id,
-                                recipient_id: user.id,
+                                recipient_email: user.email,
                                 registered: false,
                             }).then(() => {
                                 setRequestedIds(prev => new Set(prev).add(activity.id));

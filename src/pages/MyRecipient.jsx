@@ -11,7 +11,6 @@ export default function MyRecipients() {
     const { user, loading } = auth || { user: null, loading: true };
 
     const [recipients, setRecipients] = useState([]);
-    const [error, setError] = useState(null);
 
     const [adding, setAdding] = useState(false);
     const [newEmail, setNewEmail] = useState('');
@@ -27,28 +26,19 @@ export default function MyRecipients() {
 
     useEffect(() => {
         if (loading || !giverEmail) return;
-        loadRecipients().catch((e) => setError(e.message || 'Failed to load recipients'));
+        loadRecipients();
     }, [giverEmail, loading]);
 
     const handleSave = async () => {
         if (!newEmail.trim()) return;
-        if (normalized.includes(email)) {
-            setError('This recipient is already linked.');
-            return;
-        }
 
-        try {
-            setSaving(true);
-            setError(null);
-            await addRecipient(giverEmail, newEmail.trim());
-            await loadRecipients();
-            setAdding(false);
-            setNewEmail('');
-        } catch (e) {
-            setError(e.message || 'Failed to add recipient');
-        } finally {
-            setSaving(false);
-        }
+        setSaving(true);
+        await addRecipient(giverEmail, newEmail.trim());
+        await loadRecipients();
+        setAdding(false);
+        setNewEmail('');
+        setSaving(false);
+
     };
 
     const normalized = recipients.map((r) =>
@@ -111,7 +101,6 @@ export default function MyRecipients() {
                     )}
                 </div>
 
-                {error && <p className="myrecipients-error">{error}</p>}
                 {loading && <p>Loading...</p>}
 
                 {!loading && normalized.length === 0 && !adding && (
