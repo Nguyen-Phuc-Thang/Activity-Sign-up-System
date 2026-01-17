@@ -50,3 +50,16 @@ export async function updateRequestStatus(requestId, status) {
     if (error) throw error;
     return data;
 }
+
+export async function getAcceptedRequestsByRecipientEmails(recipientEmails) {
+    if (!recipientEmails || recipientEmails.length === 0) return [];
+
+    const { data, error } = await supabase
+        .from("requests")
+        .select("id, activity_id, recipient_email, status")
+        .in("recipient_email", recipientEmails)
+        .eq("status", "accepted");
+
+    if (error) throw error;
+    return data || [];
+}

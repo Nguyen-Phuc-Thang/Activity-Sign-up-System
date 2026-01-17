@@ -118,7 +118,7 @@ export default function CaregiverRequests() {
                                         <div className="caregiver-requests-card-main">
                                             <div className="caregiver-requests-title">{title}</div>
                                             <div className="caregiver-requests-meta">
-                                                <span>Recipient ID: {r.recipient_id}</span>
+                                                <span>Recipient email: {r.recipient_email}</span>
                                                 {time && <span>• {time}</span>}
                                                 {location && <span>• {location}</span>}
                                             </div>
@@ -162,7 +162,7 @@ export default function CaregiverRequests() {
                                         <div className="caregiver-requests-card-main">
                                             <div className="caregiver-requests-title">{title}</div>
                                             <div className="caregiver-requests-meta">
-                                                <span>Recipient ID: {r.recipient_id}</span>
+                                                <span>Recipient email: {r.recipient_email}</span>
                                             </div>
                                         </div>
 

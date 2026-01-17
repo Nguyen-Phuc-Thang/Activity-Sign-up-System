@@ -1,17 +1,134 @@
-.overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+:root {
+    --page-bg: #f6f7fb;
+    --surface: #ffffff;
+    --border: #e5e7eb;
+    --text: #111827;
+    --muted: #6b7280;
+
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+    --radius: 14px;
+
+    --fc-border-color: var(--border);
+    --fc-today-bg-color: rgba(59, 130, 246, 0.08);
 }
 
-.content {
-    background: rgb(117, 118, 123);
-    padding: 24px;
-    border-radius: 10px;
-    max-width: 90%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+body {
+    background: var(--page-bg);
+}
+
+.fc {
+    margin: 16px auto 24px;
+    max-width: 1100px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 14px;
+    color: var(--text);
+    overflow: hidden;
+}
+
+.fc+p,
+p[style*="color: red"] {
+    max-width: 1100px;
+    margin: 12px auto 0;
+}
+
+.fc .fc-toolbar {
+    margin-bottom: 12px !important;
+    gap: 12px;
+}
+
+.fc .fc-toolbar-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.fc .fc-button {
+    border-radius: 10px !important;
+    border: 1px solid var(--border) !important;
+    background: #fff !important;
+    color: var(--text) !important;
+    padding: 8px 12px !important;
+    font-weight: 600;
+    line-height: 1;
+    box-shadow: none !important;
+}
+
+.fc .fc-button:hover {
+    background: #f3f4f6 !important;
+    border-color: #d1d5db !important;
+    transform: translateY(-1px);
+}
+
+.fc .fc-button:active {
+    transform: translateY(0);
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+    background: #111827 !important;
+    border-color: #111827 !important;
+    color: #fff !important;
+}
+
+.fc .fc-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.fc .fc-scrollgrid,
+.fc .fc-scrollgrid-section>td,
+.fc .fc-scrollgrid-section-header>td {
+    border-color: var(--border) !important;
+}
+
+.fc .fc-col-header-cell-cushion {
+    padding: 10px 8px !important;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.fc .fc-timegrid-axis-cushion,
+.fc .fc-timegrid-slot-label-cushion {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.fc .fc-timegrid-slot {
+    border-color: rgba(229, 231, 235, 0.75) !important;
+}
+
+.fc .fc-day-today {
+    background: var(--fc-today-bg-color) !important;
+}
+
+.fc .fc-event {
+    border-radius: 10px !important;
+    border: 1px solid rgba(17, 24, 39, 0.08) !important;
+    padding: 2px 6px !important;
+    cursor: pointer;
+}
+
+.fc .fc-timegrid-event {
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.fc .fc-event-title,
+.fc .fc-event-time {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.fc .fc-daygrid-event {
+    border-radius: 10px !important;
+    padding: 2px 6px !important;
+}
+
+.fc .fc-event:hover {
+    filter: brightness(0.98);
+    transform: translateY(-1px);
+    transition: transform 20ms ease, filter 20ms ease;
 }

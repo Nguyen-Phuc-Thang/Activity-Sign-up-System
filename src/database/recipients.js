@@ -29,3 +29,13 @@ export async function addRecipient(giverEmail, recipientEmail) {
         throw error;
     }
 }
+
+export async function getMyRecipientEmails(giverEmail) {
+    const { data, error } = await supabase
+        .from("pairs")
+        .select("recipient_email")
+        .eq("giver_email", giverEmail);
+
+    if (error) throw error;
+    return (data || []).map(r => r.recipient_email);
+}

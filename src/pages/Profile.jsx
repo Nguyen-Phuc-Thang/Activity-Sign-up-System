@@ -5,9 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import AdminNavBar from '../components/AdminNavBar';
 import { getUserMetadata, updateUserMetadata } from '../database/userMetadata.js';
 import { AuthContext } from '../providers/AuthContext.js';
+import CaregiverNavBar from '../components/CaregiverNavBar';
+import CareRecipientNavBar from '../components/CareRecipientNavBar';
 
 
-export default function Profile({ navbar }) {
+export default function Profile() {
     const { user, loading } = useContext(AuthContext);
     const [userMetadata, setUserMetadata] = useState(null);
     const [editingField, setEditingField] = useState(null);
@@ -42,7 +44,9 @@ export default function Profile({ navbar }) {
 
     return (
         <div className="profile-page">
-            <div> {navbar} </div>
+            {userMetadata.role === 'Admin' && <AdminNavBar />}
+            {userMetadata.role === 'Caregiver' && <CaregiverNavBar />}
+            {userMetadata.role === 'Recipient' && <CareRecipientNavBar />}
             <main className="profile-content" style={{ backgroundColor: Colors.BACKGROUND }}>
                 <div className="profile-container">
                     {/* Avatar Section */}
