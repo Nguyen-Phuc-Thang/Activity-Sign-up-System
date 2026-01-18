@@ -13,6 +13,7 @@ import ModifyActivity from './pages/ModifyActivity.jsx';
 import MyRecipients from './pages/MyRecipient.jsx';
 import CaregiverRequests from './pages/CaregiverRequests.jsx';
 
+import AddAccount from './pages/AddAccount.jsx';
 function App() {
   return (
     <BrowserRouter>
@@ -28,6 +29,7 @@ function App() {
           <Route path="/admin/activity/add" element={<AddActivity />} />
           <Route path="/admin/activity/modify/:activityId" element={<ModifyActivity />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/admin/account/add" element={<AddAccount />} />
         </Routes>
       </main>
     </BrowserRouter>
