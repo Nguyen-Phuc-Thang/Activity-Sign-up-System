@@ -1,0 +1,148 @@
+.caregiver-requests-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.caregiver-requests-content {
+    flex: 1;
+    padding: 32px;
+    box-sizing: border-box;
+}
+
+.caregiver-requests-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.caregiver-requests-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 650;
+}
+
+.caregiver-requests-refresh {
+    border: none;
+    background: #e5e7eb;
+    padding: 10px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.caregiver-requests-error {
+    color: #dc2626;
+    background: #fee2e2;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 10px 0 16px;
+}
+
+.caregiver-requests-empty {
+    margin-top: 60px;
+    text-align: center;
+    color: #6b7280;
+}
+
+.caregiver-requests-section-title {
+    margin: 22px 0 12px;
+    font-size: 16px;
+    font-weight: 650;
+    color: #374151;
+}
+
+.caregiver-requests-list {
+    display: grid;
+    gap: 12px;
+}
+
+.caregiver-requests-card {
+    background: white;
+    border-radius: 14px;
+    padding: 14px 16px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.caregiver-requests-card-main {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+}
+
+.caregiver-requests-title {
+    font-size: 15px;
+    font-weight: 650;
+    color: #111827;
+}
+
+.caregiver-requests-meta {
+    font-size: 12px;
+    color: #6b7280;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.caregiver-requests-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.caregiver-requests-accept {
+    border: none;
+    background: #16a34a;
+    color: white;
+    padding: 9px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.caregiver-requests-reject {
+    border: none;
+    background: #dc2626;
+    color: white;
+    padding: 9px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.caregiver-requests-accept:disabled,
+.caregiver-requests-reject:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.caregiver-requests-badge {
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 650;
+    text-transform: capitalize;
+}
+
+.badge-accepted {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.badge-rejected {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+@media (max-width: 640px) {
+    .caregiver-requests-content {
+        padding: 18px;
+    }
+
+    .caregiver-requests-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
