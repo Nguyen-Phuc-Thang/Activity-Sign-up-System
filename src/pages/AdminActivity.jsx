@@ -17,9 +17,6 @@ export default function AdminActivity() {
     const [activities, setActivities] = useState(null);
 
     useEffect(() => {
-        getUserMetadata(user.id).then((metadata) => {
-            setUserMetadata(metadata);
-        });
         getAllActivities().then((activities) => {
             setActivities(activities);
         });
